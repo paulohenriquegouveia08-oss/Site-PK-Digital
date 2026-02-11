@@ -1,0 +1,82 @@
+/* Configurações Base */
+:root {
+  --brand-color: #2563eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #ffffff;
+  color: #0f172a;
+  overflow-x: hidden;
+}
+
+/* Efeito Glassmorphism Ultra Premium - FOCO NO BORRÃO INTENSO */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(60px) saturate(250%) !important;
+  -webkit-backdrop-filter: blur(60px) saturate(250%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Estado da pílula com desfoque máximo */
+.glass-pill {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(80px) saturate(280%) !important;
+  -webkit-backdrop-filter: blur(80px) saturate(280%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.12) !important;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(40px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(40px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Gradiente de Texto Animado */
+.text-blue-gradient {
+  background: linear-gradient(to right, #2563eb, #60a5fa, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-color);
+}
+
+/* Utilitários Extras */
+.selection-brand::selection {
+  background-color: var(--brand-color);
+  color: white;
+}

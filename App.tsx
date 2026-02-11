@@ -11,7 +11,7 @@ import { WhatsappLogo } from './components/ui/WhatsappLogo';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-brand-600 selection:text-white font-sans">
+    <div className="min-h-screen bg-white text-slate-900 font-sans">
       <Navbar />
       
       <main>
@@ -20,7 +20,6 @@ const App: React.FC = () => {
         <About />
         <Benefits />
         <Testimonials />
-        {/* Pricing section removed as requested */}
         <FAQ />
       </main>
 

@@ -27,10 +27,10 @@ const Navbar: React.FC = () => {
       ${scrolled ? 'top-6' : 'top-4 md:top-6'}`}
     >
       <div 
-        className={`transition-all duration-700 glass-nav overflow-hidden pointer-events-auto
+        className={`transition-all duration-700 overflow-hidden pointer-events-auto
         ${scrolled 
-          ? 'max-w-xl rounded-full py-2.5 px-6 shadow-2xl border-white/50' 
-          : 'max-w-7xl w-full py-4 px-6 md:px-10 rounded-[24px] md:rounded-[32px] border border-slate-100/50 shadow-lg'}`}
+          ? 'glass-pill max-w-xl rounded-full py-2.5 px-6 shadow-2xl' 
+          : 'glass-nav max-w-7xl w-full py-4 px-6 md:px-10 rounded-[24px] md:rounded-[32px] shadow-lg'}`}
       >
         <div className={`flex items-center transition-all duration-700 ${scrolled ? 'justify-center' : 'justify-between'}`}>
           
