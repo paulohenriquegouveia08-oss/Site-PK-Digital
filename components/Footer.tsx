@@ -1,11 +1,25 @@
 import React from 'react';
 import { Instagram, Linkedin, Code } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Footer: React.FC = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const scrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 

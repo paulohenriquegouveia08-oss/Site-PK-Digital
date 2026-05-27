@@ -1,6 +1,7 @@
 import React from 'react';
 import { PORTFOLIO_PROJECTS } from '../constants';
 import { ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Portfolio: React.FC = () => {
   return (
@@ -32,12 +33,12 @@ const Portfolio: React.FC = () => {
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                  <a 
-                    href={project.link}
-                    className="bg-white text-slate-900 p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 hover:bg-brand-50"
+                  <Link 
+                    to={`/projeto/${project.id}`}
+                    className="bg-white text-slate-900 p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 hover:bg-brand-50 shadow-xl"
                   >
                     <ExternalLink className="w-6 h-6" />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="p-6 flex-1 flex flex-col">

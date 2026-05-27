@@ -164,24 +164,33 @@ export const FAQS = [
 
 export const PORTFOLIO_PROJECTS = [
   {
+    id: "fitlife-academy",
     title: "FitLife Academy",
     category: "Landing Page",
     description: "Página de alta conversão para academia premium focada em captação de leads e vendas de planos anuais.",
+    fullDescription: "A FitLife Academy precisava de uma landing page agressiva e moderna para captar novos alunos para seus planos anuais. Desenvolvemos uma página focada em conversão, com seções persuasivas sobre os treinos, depoimentos de alunos reais e integração direta com o sistema de agendamento de aulas experimentais pelo WhatsApp.",
     image: "/portfolio/landing.png",
-    link: "#"
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    developmentTime: "5 dias úteis"
   },
   {
+    id: "aethelred-chambers",
     title: "Aethelred & Chambers",
     category: "Site Institucional",
     description: "Site corporativo elegante e moderno para escritório de advocacia, transmitindo confiança e autoridade.",
+    fullDescription: "O escritório Aethelred & Chambers buscava renovar sua presença digital com um design que transmitisse seriedade, experiência e sofisticação. O projeto incluiu uma página inicial impactante, uma área dedicada aos advogados associados, detalhamento das áreas de atuação e um formulário de contato integrado ao CRM do escritório.",
     image: "/portfolio/corporate.png",
-    link: "#"
+    technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    developmentTime: "12 dias úteis"
   },
   {
+    id: "horology-london",
     title: "Horology London",
     category: "E-commerce",
     description: "Loja virtual minimalista e sofisticada para relógios de luxo, com foco na experiência do usuário e alta resolução de produtos.",
+    fullDescription: "Para a Horology London, criamos uma experiência de e-commerce premium. O layout minimalista foi projetado para destacar os detalhes dos relógios de luxo através de imagens em alta resolução. O sistema conta com carrinho otimizado, filtro avançado de produtos e um painel administrativo completo para gestão de estoque e vendas.",
     image: "/portfolio/ecommerce.png",
-    link: "#"
+    technologies: ["React", "Node.js", "PostgreSQL", "Stripe API"],
+    developmentTime: "25 dias úteis"
   }
 ];
