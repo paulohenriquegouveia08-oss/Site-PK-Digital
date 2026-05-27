@@ -161,3 +161,27 @@ export const FAQS = [
     answer: "Dependendo do pacote contratado, podemos incluir o primeiro ano de hospedagem. O domínio (ex: seunome.com.br) deve ser registrado em seu nome, mas nossa equipe auxilia em todo o processo técnico."
   }
 ];
+
+export const PORTFOLIO_PROJECTS = [
+  {
+    title: "FitLife Academy",
+    category: "Landing Page",
+    description: "Página de alta conversão para academia premium focada em captação de leads e vendas de planos anuais.",
+    image: "/portfolio/landing.png",
+    link: "#"
+  },
+  {
+    title: "Aethelred & Chambers",
+    category: "Site Institucional",
+    description: "Site corporativo elegante e moderno para escritório de advocacia, transmitindo confiança e autoridade.",
+    image: "/portfolio/corporate.png",
+    link: "#"
+  },
+  {
+    title: "Horology London",
+    category: "E-commerce",
+    description: "Loja virtual minimalista e sofisticada para relógios de luxo, com foco na experiência do usuário e alta resolução de produtos.",
+    image: "/portfolio/ecommerce.png",
+    link: "#"
+  }
+];

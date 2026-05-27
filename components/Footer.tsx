@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-slate-900 font-extrabold mb-6">Redes Sociais</h4>
             <div className="flex space-x-4">
-              <a href="#" className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 hover:border-brand-600 transition-all shadow-sm">
+              <a href="https://www.instagram.com/pk_digital_group/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 hover:border-brand-600 transition-all shadow-sm">
                 <Instagram className="w-6 h-6" />
               </a>
               <a href="#" className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 hover:border-brand-600 transition-all shadow-sm">

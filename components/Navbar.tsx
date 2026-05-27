@@ -49,6 +49,7 @@ const Navbar: React.FC = () => {
           <nav className={`flex items-center transition-all duration-700 ${scrolled ? 'gap-3 md:gap-6' : 'space-x-8'}`}>
             <div className={`hidden md:flex gap-6 ${scrolled ? 'items-center' : ''}`}>
               <button onClick={() => scrollTo('services')} className="text-slate-600 hover:text-brand-600 transition-colors text-[10px] md:text-xs font-black uppercase tracking-widest">Serviços</button>
+              <button onClick={() => scrollTo('portfolio')} className="text-slate-600 hover:text-brand-600 transition-colors text-[10px] md:text-xs font-black uppercase tracking-widest">Portfólio</button>
               <button onClick={() => scrollTo('about')} className="text-slate-600 hover:text-brand-600 transition-colors text-[10px] md:text-xs font-black uppercase tracking-widest">Sobre</button>
               <button onClick={() => scrollTo('faq')} className="text-slate-600 hover:text-brand-600 transition-colors text-[10px] md:text-xs font-black uppercase tracking-widest">FAQ</button>
             </div>
@@ -80,6 +81,7 @@ const Navbar: React.FC = () => {
         <div className="md:hidden glass-panel border border-slate-100 absolute top-[calc(100%+12px)] left-4 right-4 rounded-3xl animate-in fade-in zoom-in duration-300 pointer-events-auto overflow-hidden">
           <div className="px-4 py-8 space-y-2 flex flex-col items-center bg-white/95 backdrop-blur-xl">
             <button onClick={() => scrollTo('services')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">Serviços</button>
+            <button onClick={() => scrollTo('portfolio')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">Portfólio</button>
             <button onClick={() => scrollTo('about')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">Sobre</button>
             <button onClick={() => scrollTo('faq')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">FAQ</button>
             <a 
