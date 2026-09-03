@@ -8,7 +8,12 @@ import { WhatsappLogo } from './components/ui/WhatsappLogo';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    // `basename` e' o prefixo do caminho onde o site esta publicado.
+    // Sem ele, num subdiretorio (/Site-PK-Digital/) a rota "/" nunca
+    // casa: o cabecalho e o rodape aparecem, e o meio da pagina fica
+    // vazio. Vem do mesmo `base` do vite.config, entao os dois nunca
+    // divergem.
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
         <Navbar />
         

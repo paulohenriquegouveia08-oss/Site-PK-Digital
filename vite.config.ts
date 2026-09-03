@@ -9,16 +9,18 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
       },
-      // Caminhos RELATIVOS nos arquivos gerados.
+      // O caminho onde o site fica publicado.
       //
-      // Sem isto o Vite gera "/assets/...", que so funciona quando o
-      // site esta na raiz do dominio. No GitHub Pages ele fica em
-      // /Site-PK-Digital/, e todo CSS e JS daria 404 — pagina em branco.
+      // Hoje e' /Site-PK-Digital/ (GitHub Pages de um repositorio).
+      // QUANDO lspk.com.br APONTAR PARA CA, troque por '/' — e' a
+      // unica linha que muda.
       //
-      // Com './' o mesmo build serve nos dois lugares: no endereco do
-      // GitHub Pages agora e em lspk.com.br quando o dominio apontar,
-      // sem precisar reconfigurar nada.
-      base: './',
+      // Nao da para usar './' aqui: o React Router precisa saber o
+      // prefixo para casar as rotas (App.tsx usa este mesmo valor como
+      // basename). Com './' o BASE_URL vira "./", que nao serve de
+      // prefixo, e a home nao casa — a pagina abre so com o cabecalho
+      // e o rodape, sem conteudo.
+      base: env.SITE_BASE || '/Site-PK-Digital/',
       plugins: [react()],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
