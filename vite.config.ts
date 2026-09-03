@@ -9,18 +9,20 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
       },
-      // O caminho onde o site fica publicado.
+      // O site e' servido na RAIZ do dominio (Vercel).
       //
-      // Hoje e' /Site-PK-Digital/ (GitHub Pages de um repositorio).
-      // QUANDO lspk.com.br APONTAR PARA CA, troque por '/' — e' a
-      // unica linha que muda.
+      // Ja quebrou uma vez por causa disto: com base '/Site-PK-Digital/'
+      // (caminho do GitHub Pages), a Vercel servia o index.html mas o
+      // CSS e o JS eram pedidos em /Site-PK-Digital/assets/... — que
+      // nao existe la. Resultado: pagina totalmente branca, sem erro
+      // visivel para quem abre.
       //
-      // Nao da para usar './' aqui: o React Router precisa saber o
-      // prefixo para casar as rotas (App.tsx usa este mesmo valor como
-      // basename). Com './' o BASE_URL vira "./", que nao serve de
-      // prefixo, e a home nao casa — a pagina abre so com o cabecalho
-      // e o rodape, sem conteudo.
-      base: env.SITE_BASE || '/Site-PK-Digital/',
+      // Fica em '/' e nao em './' porque o React Router usa este valor
+      // como basename (App.tsx). Com './' o BASE_URL vira "./", que nao
+      // e' prefixo de rota valido.
+      //
+      // SITE_BASE existe para publicar num subdiretorio sem tocar aqui.
+      base: env.SITE_BASE || '/',
       plugins: [react()],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
