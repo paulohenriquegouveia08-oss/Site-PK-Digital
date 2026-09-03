@@ -78,7 +78,7 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-white border-t border-slate-100 relative">
+    <section className="py-24 bg-slate-50 border-t border-slate-100 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
@@ -97,7 +97,7 @@ const Testimonials: React.FC = () => {
           {reviews.map((review, i) => (
               <div 
                 key={i} 
-                className="snap-center shrink-0 w-[320px] md:w-[380px] bg-white border border-slate-100 p-8 rounded-3xl flex flex-col hover:border-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/5 shadow-sm"
+                className="snap-center shrink-0 w-[320px] md:w-[380px] bg-slate-50 border border-slate-100 p-8 rounded-3xl flex flex-col hover:border-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/5 shadow-sm"
               >
                   <div className="flex justify-between items-start mb-6">
                       <div className="flex items-center gap-4">

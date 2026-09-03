@@ -31,7 +31,7 @@ const ProjectDetails: React.FC = () => {
   }
 
   return (
-    <div className="pt-28 pb-20 bg-white min-h-screen">
+    <div className="pt-28 pb-20 bg-slate-50 min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Link to="/" className="inline-flex items-center text-slate-500 hover:text-brand-600 font-bold mb-8 transition-colors">
@@ -77,7 +77,7 @@ const ProjectDetails: React.FC = () => {
               <ul className="space-y-3">
                 {project.technologies?.map((tech, index) => (
                   <li key={index} className="flex items-center text-slate-600 font-medium">
-                    <span className="bg-white p-2 rounded-lg shadow-sm border border-slate-100 mr-3 text-slate-400">
+                    <span className="bg-slate-50 p-2 rounded-lg shadow-sm border border-slate-100 mr-3 text-slate-400">
                       {getTechIcon(tech)}
                     </span>
                     {tech}

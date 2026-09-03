@@ -3,9 +3,9 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-32 md:pt-40 pb-20 overflow-hidden bg-white">
+    <section id="hero" className="relative min-h-screen flex items-center pt-32 md:pt-40 pb-20 overflow-hidden bg-slate-50">
       {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-brand-50 via-white to-white -z-20"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-brand-50 via-slate-50 to-slate-50 -z-20"></div>
       <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-600/5 rounded-full blur-[120px] -z-10"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
               Falar com Consultor
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="px-10 py-4 rounded-full border border-slate-200 text-slate-700 hover:border-brand-600 hover:text-brand-600 transition-all font-semibold bg-white/50 backdrop-blur-sm">
+            <button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="px-10 py-4 rounded-full border border-slate-200 text-slate-700 hover:border-brand-600 hover:text-brand-600 transition-all font-semibold bg-slate-50/50 backdrop-blur-sm">
               Ver Serviços
             </button>
           </div>
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
             
             {/* Laptop Base */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-4 bg-slate-200 rounded-b-xl shadow-lg z-20"></div>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[80%] h-[200px] md:h-[260px] bg-white rounded-t-xl border-4 border-slate-100 p-1 shadow-2xl z-10">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[80%] h-[200px] md:h-[260px] bg-slate-50 rounded-t-xl border-4 border-slate-100 p-1 shadow-2xl z-10">
                {/* Screen Content */}
                <div className="w-full h-full bg-slate-50 rounded overflow-hidden relative group border border-slate-100">
                   {/* Mock UI Header */}
@@ -83,8 +83,8 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Phone Element */}
-            <div className="absolute bottom-0 -right-4 md:right-0 w-[80px] md:w-[100px] h-[160px] md:h-[200px] bg-slate-900 border-4 border-slate-100 rounded-2xl shadow-2xl z-30 transform rotate-[-5deg] translate-y-4">
-              <div className="w-full h-full bg-white rounded-xl overflow-hidden relative">
+            <div className="absolute bottom-0 -right-4 md:right-0 w-[80px] md:w-[100px] h-[160px] md:h-[200px] bg-black border-4 border-slate-200 rounded-2xl shadow-2xl z-30 transform rotate-[-5deg] translate-y-4">
+              <div className="w-full h-full bg-slate-50 rounded-xl overflow-hidden relative">
                 {/* Phone Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-4 bg-slate-100 rounded-b-lg z-10"></div>
                 {/* Phone Content */}

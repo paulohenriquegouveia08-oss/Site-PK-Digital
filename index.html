@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PK Digital | Criação de Sites Premium</title>
+    <title>LSPK Tecnology | Sites, Sistemas e Automação</title>
     
-    <!-- Favicon - Logo PK Digital -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M20 25h40v20H35v30H20V25z' fill='%230f172a'/><path d='M55 25h15L55 50l15 25H55L45 55l-10 20H20l20-30-20-30h15l10 20 10-20z' fill='%232563eb'/></svg>">
+    <!-- Favicon: o monograma LSPK, nas cores da logo -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23000000'/><text x='50' y='50' text-anchor='middle' dominant-baseline='central' font-family='Outfit,Arial,sans-serif' font-size='34' font-weight='800' fill='%230275FF' letter-spacing='-1'>LSPK</text></svg>">
     
     <!-- Estilos Externos -->
     <link rel="stylesheet" href="globals.css">
@@ -24,14 +24,55 @@
             fontFamily: {
               sans: ['Outfit', 'sans-serif'],
             },
+            // ─────────────────────────────────────────────────────────
+            // Paleta da LSPK Tecnology, tirada da propria logo:
+            // preto dominante, azul eletrico e prata.
+            //
+            //   azul vivo   #0275FF   (o azul do "SPK")
+            //   azul fundo  #0047B3   (o lado escuro do gradiente)
+            //   preto       #000000   (82% da logo)
+            //   prata       #E8E8EA   (o "L" e o "P")
+            //
+            // ATENCAO — a escala `slate` esta INVERTIDA de proposito.
+            //
+            // No Tailwind padrao, slate-50 e' quase branco e slate-900
+            // e' quase preto. Aqui e' o contrario: os numeros BAIXOS sao
+            // as superficies escuras e os ALTOS sao o texto claro.
+            //
+            // Nao foi capricho. O site inteiro ja usava a escala de
+            // forma semantica — `bg-slate-50` para fundo, `text-slate-900`
+            // para titulo — em quase 100 lugares. Invertendo os valores
+            // aqui, cada um desses usos passa a estar certo no tema
+            // escuro sem tocar em nenhum componente. A alternativa era
+            // reescrever as ~200 classes a mao, com chance de esquecer
+            // uma e deixar texto preto sobre fundo preto.
+            //
+            // Se algum dia o site voltar a ser claro, e' este bloco que
+            // muda — nao os componentes.
+            // ─────────────────────────────────────────────────────────
             colors: {
               brand: {
-                50: '#eff6ff',
-                100: '#dbeafe',
-                500: '#3b82f6',
-                600: '#2563eb',
-                700: '#1d4ed8',
-              }
+                // Fundos de destaque (chips, cartoes). Eram tons claros
+                // de azul; agora sao azul-escuro sobre o preto.
+                50:  '#071A33',
+                100: '#0C2A52',
+                200: '#123C75',
+                500: '#1A8CFF',
+                600: '#0275FF',   // o azul da marca — o mais usado
+                700: '#0047B3',
+              },
+              slate: {
+                50:  '#0E0E11',   // superficie sobre o preto
+                100: '#17171C',   // bordas e divisorias sutis
+                200: '#22222A',   // bordas com mais presenca
+                300: '#3A3A44',
+                400: '#6C6F78',   // texto de apoio mais discreto
+                500: '#8A8D96',
+                600: '#A8ABB4',   // paragrafos
+                700: '#C9CBD1',
+                800: '#DEDFE3',
+                900: '#F0F1F3',   // titulos (a prata da logo)
+              },
             },
             animation: {
               'float': 'float 6s ease-in-out infinite',

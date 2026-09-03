@@ -4,7 +4,7 @@ import { BENEFITS } from '../constants';
 
 const Benefits: React.FC = () => {
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-24 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
@@ -19,9 +19,9 @@ const Benefits: React.FC = () => {
           {BENEFITS.map((benefit, index) => (
             <div 
               key={index}
-              className="bg-white border border-slate-100 p-8 rounded-2xl hover:bg-brand-600 group transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-brand-600/20"
+              className="bg-slate-50 border border-slate-100 p-8 rounded-2xl hover:bg-brand-600 group transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-brand-600/20"
             >
-              <div className="w-14 h-14 bg-brand-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-brand-600/20 group-hover:bg-white group-hover:scale-110 transition-all duration-500">
+              <div className="w-14 h-14 bg-brand-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-brand-600/20 group-hover:bg-slate-50 group-hover:scale-110 transition-all duration-500">
                 {/* Fix: casting to React.ReactElement<any> to allow className prop injection via cloneElement */}
                 {React.cloneElement(benefit.icon as React.ReactElement<any>, { className: 'w-7 h-7 text-white group-hover:text-brand-600 transition-colors' })}
               </div>

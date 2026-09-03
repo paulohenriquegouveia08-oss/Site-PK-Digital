@@ -40,7 +40,7 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <section id="about" className="py-24 bg-white border-y border-slate-100 relative overflow-hidden">
+    <section id="about" className="py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-50/50 rounded-full blur-[100px] -z-10"></div>
 
@@ -61,7 +61,7 @@ const About: React.FC = () => {
             >
               {cards.map((card, index) => (
                 <div key={index} className="w-full flex-shrink-0 px-4">
-                  <div className="glass-panel p-8 md:p-12 rounded-3xl border border-slate-100 hover:border-brand-600/20 hover:shadow-xl hover:shadow-brand-600/5 transition-all duration-500 group flex flex-col items-center text-center bg-white/80">
+                  <div className="glass-panel p-8 md:p-12 rounded-3xl border border-slate-100 hover:border-brand-600/20 hover:shadow-xl hover:shadow-brand-600/5 transition-all duration-500 group flex flex-col items-center text-center bg-slate-50/80">
                     <div className="mb-6 p-4 rounded-2xl bg-brand-50 border border-brand-100 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all duration-500">
                       {/* Fix: casting to React.ReactElement<any> to allow className prop injection via cloneElement */}
                       {React.cloneElement(card.icon as React.ReactElement<any>, { className: 'w-8 h-8 transition-colors group-hover:text-white' })}

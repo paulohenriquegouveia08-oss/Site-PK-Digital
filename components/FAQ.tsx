@@ -6,7 +6,7 @@ const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="py-24 bg-slate-50">
       <div className="max-w-3xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-slate-900 mb-12">Perguntas Frequentes</h2>
         
@@ -14,7 +14,7 @@ const FAQ: React.FC = () => {
           {FAQS.map((faq, index) => (
             <div 
               key={index} 
-              className={`rounded-2xl overflow-hidden transition-all duration-300 border ${openIndex === index ? 'border-brand-600/30 bg-brand-50/30 shadow-sm' : 'border-slate-100 bg-white'}`}
+              className={`rounded-2xl overflow-hidden transition-all duration-300 border ${openIndex === index ? 'border-brand-600/30 bg-brand-50/30 shadow-sm' : 'border-slate-100 bg-slate-50'}`}
             >
               <button
                 className="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none group"

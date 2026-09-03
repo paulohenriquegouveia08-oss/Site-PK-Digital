@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
             onClick={() => scrollTo('hero')}
           >
             <span className="text-xl md:text-2xl font-black text-slate-900 tracking-tighter whitespace-nowrap">
-              PK <span className="text-brand-600">DIGITAL</span>
+              LSPK <span className="text-brand-600">TECNOLOGY</span>
             </span>
           </div>
 
@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       {isOpen && !scrolled && (
         <div className="md:hidden glass-panel border border-slate-100 absolute top-[calc(100%+12px)] left-4 right-4 rounded-3xl animate-in fade-in zoom-in duration-300 pointer-events-auto overflow-hidden">
-          <div className="px-4 py-8 space-y-2 flex flex-col items-center bg-white/95 backdrop-blur-xl">
+          <div className="px-4 py-8 space-y-2 flex flex-col items-center bg-slate-50/95 backdrop-blur-xl">
             <button onClick={() => scrollTo('services')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">Serviços</button>
             <button onClick={() => scrollTo('portfolio')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">Portfólio</button>
             <button onClick={() => scrollTo('about')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">Sobre</button>

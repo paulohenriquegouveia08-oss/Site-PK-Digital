@@ -9,7 +9,7 @@ import { WhatsappLogo } from './components/ui/WhatsappLogo';
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-white text-slate-900 font-sans">
+      <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
         <Navbar />
         
         <Routes>

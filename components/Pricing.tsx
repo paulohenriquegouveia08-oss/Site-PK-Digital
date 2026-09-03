@@ -19,7 +19,7 @@ const Pricing: React.FC = () => {
             <div 
               key={index} 
               className={`
-                relative p-10 rounded-3xl border transition-all duration-500 flex flex-col h-full bg-white
+                relative p-10 rounded-3xl border transition-all duration-500 flex flex-col h-full bg-slate-50
                 ${plan.recommended 
                   ? 'border-brand-600 shadow-2xl shadow-brand-600/10 scale-105 z-10' 
                   : 'border-slate-100 hover:border-brand-200 hover:shadow-lg'

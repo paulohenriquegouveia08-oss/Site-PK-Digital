@@ -17,7 +17,7 @@ const Services: React.FC = () => {
           {SERVICES.map((service, index) => (
             <div 
               key={index} 
-              className="group glass-panel p-8 rounded-3xl hover:border-brand-600/30 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full bg-white border border-slate-100"
+              className="group glass-panel p-8 rounded-3xl hover:border-brand-600/30 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full bg-slate-50 border border-slate-100"
             >
               {/* Hover Glow Effect */}
               <div className="absolute inset-0 bg-brand-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>

@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
           
           <div className="col-span-1 md:col-span-2">
             <span className="text-3xl font-extrabold text-slate-900 tracking-tighter block mb-6">
-              PK <span className="text-brand-600">DIGITAL</span>
+              LSPK <span className="text-brand-600">TECNOLOGY</span>
             </span>
             <p className="text-slate-500 text-base font-medium max-w-md leading-relaxed">
               Transformamos ideias em experiências digitais de alto impacto. 
@@ -50,13 +50,13 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-slate-900 font-extrabold mb-6">Redes Sociais</h4>
             <div className="flex space-x-4">
-              <a href="https://www.instagram.com/pk_digital_group/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 hover:border-brand-600 transition-all shadow-sm">
+              <a href="https://www.instagram.com/pk_digital_group/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 hover:border-brand-600 transition-all shadow-sm">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 hover:border-brand-600 transition-all shadow-sm">
+              <a href="#" className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 hover:border-brand-600 transition-all shadow-sm">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 hover:border-brand-600 transition-all shadow-sm">
+              <a href="#" className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 hover:border-brand-600 transition-all shadow-sm">
                 <Code className="w-6 h-6" />
               </a>
             </div>
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-bold text-slate-400 uppercase tracking-widest">
-          <p>&copy; {new Date().getFullYear()} PK Digital. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} LSPK Tecnology. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Portfolio: React.FC = () => {
   return (
-    <section id="portfolio" className="py-24 bg-white">
+    <section id="portfolio" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-brand-600 font-bold tracking-wider uppercase text-sm">
@@ -32,10 +32,10 @@ const Portfolio: React.FC = () => {
                   alt={project.title} 
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
                   <Link 
                     to={`/projeto/${project.id}`}
-                    className="bg-white text-slate-900 p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 hover:bg-brand-50 shadow-xl"
+                    className="bg-slate-50 text-slate-900 p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 hover:bg-brand-50 shadow-xl"
                   >
                     <ExternalLink className="w-6 h-6" />
                   </Link>

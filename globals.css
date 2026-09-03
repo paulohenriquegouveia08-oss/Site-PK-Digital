@@ -1,6 +1,13 @@
 /* Configurações Base */
+/* Cores da logo da LSPK Tecnology.
+   O azul e' o do "SPK"; o preto e' o fundo da propria logo. */
 :root {
-  --brand-color: #2563eb;
+  --brand-color: #0275FF;
+  --brand-deep: #0047B3;
+  --brand-light: #4DA3FF;
+  --preto: #000000;
+  --superficie: #0E0E11;
+  --prata: #F0F1F3;
 }
 
 * {
@@ -11,40 +18,47 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: #ffffff;
-  color: #0f172a;
+  background-color: var(--preto);
+  color: var(--prata);
   overflow-x: hidden;
 }
 
-/* Efeito Glassmorphism Ultra Premium - FOCO NO BORRÃO INTENSO */
+/* Vidro fosco.
+   Era branco translucido, feito para fundo claro — sobre o preto ele
+   virava uma faixa leitosa e o texto sumia. Agora e' preto translucido
+   com uma borda clara de 8%, que e' o que da o contorno do vidro no
+   escuro. A sombra tambem mudou de sentido: no escuro ela nao aparece,
+   quem separa a barra do fundo e' a borda. */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.72) !important;
-  backdrop-filter: blur(60px) saturate(250%) !important;
-  -webkit-backdrop-filter: blur(60px) saturate(250%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08) !important;
+  background: rgba(10, 10, 12, 0.72) !important;
+  backdrop-filter: blur(60px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(60px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6) !important;
 }
 
 /* Estado da pílula com desfoque máximo */
 .glass-pill {
-  background: rgba(255, 255, 255, 0.82) !important;
-  backdrop-filter: blur(80px) saturate(280%) !important;
-  -webkit-backdrop-filter: blur(80px) saturate(280%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
-  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.12) !important;
+  background: rgba(14, 14, 17, 0.82) !important;
+  backdrop-filter: blur(80px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(80px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.7) !important;
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.75) !important;
-  backdrop-filter: blur(40px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(40px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03) !important;
+  background: rgba(14, 14, 17, 0.75) !important;
+  backdrop-filter: blur(40px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(40px) saturate(150%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* Gradiente de Texto Animado */
 .text-blue-gradient {
-  background: linear-gradient(to right, #2563eb, #60a5fa, #2563eb);
+  /* O mesmo caminho do gradiente da logo: azul profundo →
+     azul vivo → prata, e volta. */
+  background: linear-gradient(to right, var(--brand-deep), var(--brand-color), var(--brand-light), var(--brand-color), var(--brand-deep));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
@@ -63,11 +77,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: var(--preto);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #2A2A31;
   border-radius: 20px;
 }
 
