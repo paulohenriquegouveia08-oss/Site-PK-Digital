@@ -72,27 +72,32 @@ const Navbar: React.FC = () => {
               href="https://wa.me/5543991621344?text=Quero%20solicitar%20meu%20site"
               target="_blank"
               rel="noopener noreferrer"
-              className={`whitespace-nowrap ${
+              className={`hidden whitespace-nowrap sm:inline-flex ${
                 scrolled ? '!px-5 !py-2.5 !text-[10px]' : '!px-7 !py-3 !text-[11px]'
               }`}
             >
               Solicitar meu site
             </Botao>
 
-            {/* Mobile Menu Button - Only visible when NOT scrolled */}
-            {!scrolled && (
-              <div className="md:hidden flex items-center">
-                <button onClick={() => setIsOpen(!isOpen)} className="text-slate-900 hover:text-brand-600 p-2">
-                  {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                </button>
-              </div>
-            )}
+            {/* O menu do celular fica SEMPRE acessivel. Antes ele
+                sumia ao rolar (`!scrolled`), e a pessoa ficava sem
+                nenhuma navegacao no meio da pagina. */}
+            <div className="flex items-center md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-2 text-slate-900 transition-colors hover:text-brand-600"
+                aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+                aria-expanded={isOpen}
+              >
+                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </nav>
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
-      {isOpen && !scrolled && (
+      {isOpen && (
         <div className="md:hidden glass-panel border border-slate-100 absolute top-[calc(100%+12px)] left-4 right-4 rounded-3xl animate-in fade-in zoom-in duration-300 pointer-events-auto overflow-hidden">
           <div className="px-4 py-8 space-y-2 flex flex-col items-center bg-slate-50/95 backdrop-blur-xl">
             <button onClick={() => scrollTo('services')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">Serviços</button>

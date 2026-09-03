@@ -30,7 +30,9 @@ body {
    escuro. A sombra tambem mudou de sentido: no escuro ela nao aparece,
    quem separa a barra do fundo e' a borda. */
 .glass-nav {
-  background: rgba(10, 10, 12, 0.72) !important;
+  /* 0.86 e nao 0.72: ao rolar sobre as fotos claras do portfolio, a
+     72% o vidro clareava e a marca quase sumia. */
+  background: rgba(10, 10, 12, 0.86) !important;
   backdrop-filter: blur(60px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(60px) saturate(180%) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -39,7 +41,7 @@ body {
 
 /* Estado da pílula com desfoque máximo */
 .glass-pill {
-  background: rgba(14, 14, 17, 0.82) !important;
+  background: rgba(12, 12, 15, 0.9) !important;
   backdrop-filter: blur(80px) saturate(200%) !important;
   -webkit-backdrop-filter: blur(80px) saturate(200%) !important;
   border: 1px solid rgba(255, 255, 255, 0.10) !important;
@@ -140,4 +142,24 @@ body {
     animation: none !important;
   }
   .entrada { opacity: 1; transform: none; }
+}
+
+/* ─── Respiro da vitrine ────────────────────────────────────────────
+   O grupo de aparelhos sobe e desce 6px em 9 segundos.
+
+   O `animate-float` de antes movia 20px em 6s — naquela amplitude o
+   objeto nao parece apoiado, parece boiando, e boiar e' justamente o
+   que faz uma ilustracao parecer enfeite. Aqui o movimento e' pequeno
+   e lento: percebe-se que a tela esta viva, nao que ela esta flutuando. */
+@keyframes flutuar-leve {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+.vitrine {
+  animation: flutuar-leve 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine { animation: none; }
 }

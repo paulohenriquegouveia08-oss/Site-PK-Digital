@@ -36,7 +36,7 @@ const App: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Falar no WhatsApp"
-          className="group/botao fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-brand-600 py-4 pl-5 pr-5 text-white shadow-2xl shadow-brand-600/30 transition-[padding,box-shadow] duration-300 hover:pr-7 hover:shadow-brand-600/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          className="group/botao fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6 flex items-center gap-3 bg-brand-600 py-3.5 pl-4 pr-4 text-white sm:py-4 sm:pl-5 sm:pr-5 shadow-2xl shadow-brand-600/30 transition-[padding,box-shadow] duration-300 hover:pr-7 hover:shadow-brand-600/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           style={{
             clipPath:
               'polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)',

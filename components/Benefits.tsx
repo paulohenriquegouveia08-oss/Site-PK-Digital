@@ -26,7 +26,11 @@ const Benefits: React.FC = () => {
       <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={alvo} {...classesRevelar(visivel)} className={`${classesRevelar(visivel).className} mb-20 max-w-2xl`}>
+        <div
+          ref={alvo}
+          style={classesRevelar(visivel).style}
+          className={`${classesRevelar(visivel).className} mb-20 max-w-2xl`}
+        >
           <Etiqueta>Diferenciais</Etiqueta>
           <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-slate-900 leading-[1.05] tracking-tight">
             Não entregamos código.

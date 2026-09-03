@@ -31,9 +31,24 @@ export function useRevelar<T extends HTMLElement = HTMLDivElement>() {
       return;
     }
 
+    // Rede de seguranca: se o observador nao responder em 1,2s, mostra
+    // do mesmo jeito.
+    //
+    // Nao e' paranoia — o modo de falha aqui e' o pior possivel. Se o
+    // IntersectionObserver nao disparar (navegador antigo, aba em
+    // segundo plano na hora da montagem, WebView de aplicativo, algum
+    // navegador de celular com comportamento proprio), a secao fica com
+    // `opacity: 0` PARA SEMPRE: a pessoa rola e ve uma pagina em
+    // branco, sem erro nenhum que explique.
+    //
+    // Conteudo visivel sem animacao e' aceitavel. Conteudo invisivel
+    // nao e'. Quando o observador funciona, ele dispara antes disto.
+    const rede = window.setTimeout(() => setVisivel(true), 1200);
+
     const observador = new IntersectionObserver(
       ([entrada]) => {
         if (!entrada.isIntersecting) return;
+        window.clearTimeout(rede);
         setVisivel(true);
         observador.unobserve(entrada.target);
       },
@@ -41,7 +56,11 @@ export function useRevelar<T extends HTMLElement = HTMLDivElement>() {
     );
 
     observador.observe(el);
-    return () => observador.disconnect();
+
+    return () => {
+      window.clearTimeout(rede);
+      observador.disconnect();
+    };
   }, []);
 
   return { alvo, visivel };
