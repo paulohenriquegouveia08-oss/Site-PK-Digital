@@ -1,52 +1,76 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Botao, Seta } from './ui/Botao';
+import { Etiqueta } from './ui/Etiqueta';
 
 const Hero: React.FC = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-32 md:pt-40 pb-20 overflow-hidden bg-slate-50">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-brand-50 via-slate-50 to-slate-50 -z-20"></div>
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-600/5 rounded-full blur-[120px] -z-10"></div>
+      <div
+        aria-hidden
+        className="respiro absolute top-20 right-0 w-[560px] h-[560px] rounded-full bg-brand-600/10 blur-[140px] -z-10"
+      ></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* Text Content */}
         <div className="space-y-8 z-10 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-600 text-xs font-bold tracking-wide uppercase">
-            <span className="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
-            Agência de Desenvolvimento Web
+          {/* A pilula com bolinha pulsando saiu: e' o mesmo selo que
+              aparece em todo template de agencia. Ficou o rotulo com
+              fio, que repete o tratamento do "— TECNOLOGY —" da logo. */}
+          <div className="entrada" style={{ animationDelay: '80ms' }}>
+            <Etiqueta>Agência de desenvolvimento web</Etiqueta>
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight">
+          <h1
+            className="entrada text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.02] tracking-tight"
+            style={{ animationDelay: '160ms' }}
+          >
             Elevamos seu Negócio com <span className="text-blue-gradient">Sites de Elite</span>
           </h1>
           
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+          <p
+            className="entrada text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
+            style={{ animationDelay: '260ms' }}
+          >
             Não basta estar na internet. Sua empresa precisa se destacar. Nossa equipe cria experiências digitais imersivas, rápidas e focadas em converter visitantes em clientes fiéis.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-            <a 
+          <div
+            className="entrada flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start"
+            style={{ animationDelay: '360ms' }}
+          >
+            <Botao
               href="https://wa.me/5543991621344?text=Quero solicitar meu site!"
               target="_blank"
-              rel="noopener noreferrer" 
-              className="group bg-brand-600 hover:bg-brand-700 text-white font-bold text-lg py-4 px-10 rounded-full transition-all flex items-center gap-2 shadow-xl shadow-brand-600/25"
+              rel="noopener noreferrer"
             >
-              Falar com Consultor
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="px-10 py-4 rounded-full border border-slate-200 text-slate-700 hover:border-brand-600 hover:text-brand-600 transition-all font-semibold bg-slate-50/50 backdrop-blur-sm">
-              Ver Serviços
-            </button>
+              Falar com consultor
+              <Seta />
+            </Botao>
+
+            <Botao
+              variante="contorno"
+              como="button"
+              onClick={() =>
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
+              }
+            >
+              Ver serviços
+            </Botao>
           </div>
 
-          <div className="pt-4 flex items-center justify-center lg:justify-start gap-6 text-sm text-slate-500 font-semibold">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-brand-600" /> +150 Projetos Entregues
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-brand-600" /> Equipe Especializada
-            </div>
+          <div
+            className="entrada flex flex-wrap items-center justify-center lg:justify-start gap-x-8 gap-y-3 pt-6 text-xs font-bold uppercase tracking-[0.16em] text-slate-500"
+            style={{ animationDelay: '460ms' }}
+          >
+            {['+150 projetos entregues', 'Equipe especializada'].map((prova) => (
+              <span key={prova} className="flex items-center gap-3">
+                <span aria-hidden className="h-px w-5 bg-brand-600" />
+                {prova}
+              </span>
+            ))}
           </div>
         </div>
 

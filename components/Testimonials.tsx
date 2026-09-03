@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Star, Quote, Building2, Store, Dumbbell, Utensils, ShoppingBag, Gavel, HardHat, Scissors, HeartPulse, Laptop } from 'lucide-react';
+import { Store, Dumbbell, Utensils, ShoppingBag, Gavel, HardHat, Scissors, HeartPulse, Laptop } from 'lucide-react';
 
 const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -97,32 +97,40 @@ const Testimonials: React.FC = () => {
           {reviews.map((review, i) => (
               <div 
                 key={i} 
-                className="snap-center shrink-0 w-[320px] md:w-[380px] bg-slate-50 border border-slate-100 p-8 rounded-3xl flex flex-col hover:border-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/5 shadow-sm"
+                className="group snap-center shrink-0 w-[320px] md:w-[380px] bg-slate-50 border border-slate-100 p-8 flex flex-col transition-colors duration-300 hover:border-brand-600/40"
               >
-                  <div className="flex justify-between items-start mb-6">
-                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 shadow-sm">
-                            {review.icon}
-                        </div>
-                        <div>
-                            <h4 className="text-slate-900 font-bold text-base leading-tight">{review.name}</h4>
-                            <p className="text-sm text-brand-600 font-bold">{review.role}</p>
-                        </div>
-                      </div>
-                      <Quote className="w-8 h-8 text-brand-100 fill-brand-50" />
+                  {/* Saiu o quadrado com icone do ramo (tesoura para
+                      barbearia, garfo para restaurante) e as aspas
+                      decorativas. Eram simbolos de biblioteca que
+                      ilustravam o obvio — o cargo logo abaixo ja diz o
+                      ramo — e faziam todos os cartoes parecerem iguais.
+
+                      Entrou o ramo como etiqueta no topo: a informacao
+                      que o icone tentava dar, agora legivel. */}
+                  <div className="mb-6 flex items-baseline justify-between gap-4">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-brand-600">
+                        {review.type}
+                      </span>
+                      {/* A nota como numero, nao como cinco estrelinhas:
+                          ocupa menos, le mais rapido, e nao repete o
+                          mesmo desenho em vinte cartoes. */}
+                      <span className="font-mono text-xs font-bold text-slate-400">5,0</span>
                   </div>
 
-                  <div className="flex text-brand-500 gap-1 mb-4 text-xs">
-                    {[1,2,3,4,5].map((s) => <Star key={s} className="w-4 h-4 fill-current" />)}
-                  </div>
-                  
-                  <p className="text-slate-600 text-sm italic font-medium leading-relaxed flex-grow">
-                      "{review.text}"
+                  <p className="flex-grow text-[15px] font-medium leading-relaxed text-slate-800">
+                      &ldquo;{review.text}&rdquo;
                   </p>
-                  
-                  <div className="mt-8 pt-5 border-t border-slate-50 flex items-center justify-between">
-                     <span className="text-[10px] text-slate-400 uppercase tracking-widest font-extrabold">Projeto</span>
-                     <span className="text-xs text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-100 font-bold">{review.type}</span>
+
+                  <div className="mt-8 flex items-center gap-4 border-t border-slate-100 pt-6">
+                     {/* Iniciais no lugar da foto que nao existe: da um
+                         ponto de ancoragem visual sem inventar rosto. */}
+                     <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-brand-600/10 font-mono text-xs font-bold tracking-widest text-brand-600">
+                       {review.name.split(' ').filter(Boolean).slice(0, 2).map((n) => n[0]).join('')}
+                     </span>
+                     <span className="min-w-0">
+                       <span className="block truncate text-sm font-bold leading-tight text-slate-900">{review.name}</span>
+                       <span className="block truncate text-xs font-medium text-slate-500">{review.role}</span>
+                     </span>
                   </div>
               </div>
           ))}

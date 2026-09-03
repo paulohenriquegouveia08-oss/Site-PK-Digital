@@ -1,3 +1,5 @@
+import { Marca } from './ui/Marca';
+import { Botao } from './ui/Botao';
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -54,9 +56,7 @@ const Navbar: React.FC = () => {
             ${scrolled ? 'max-w-0 opacity-0 pointer-events-none -translate-x-10' : 'max-w-xs opacity-100'}`} 
             onClick={() => scrollTo('hero')}
           >
-            <span className="text-xl md:text-2xl font-black text-slate-900 tracking-tighter whitespace-nowrap">
-              LSPK <span className="text-brand-600">TECNOLOGY</span>
-            </span>
+            <Marca compacta className="h-6 md:h-7" />
           </div>
 
           {/* Nav Items */}
@@ -68,15 +68,16 @@ const Navbar: React.FC = () => {
               <button onClick={() => scrollTo('faq')} className="text-slate-600 hover:text-brand-600 transition-colors text-[10px] md:text-xs font-black uppercase tracking-widest">FAQ</button>
             </div>
             
-            <a 
-              href="https://wa.me/5543991621344?text=Quero%20solicitar%20meu%20site" 
-              target="_blank" 
+            <Botao
+              href="https://wa.me/5543991621344?text=Quero%20solicitar%20meu%20site"
+              target="_blank"
               rel="noopener noreferrer"
-              className={`bg-brand-600 hover:bg-brand-700 text-white font-black transition-all transform hover:scale-105 shadow-lg shadow-brand-600/20 whitespace-nowrap uppercase tracking-wider
-              ${scrolled ? 'py-2 px-5 text-[9px] rounded-full' : 'py-3 px-8 text-[11px] rounded-full'}`}
+              className={`whitespace-nowrap ${
+                scrolled ? '!px-5 !py-2.5 !text-[10px]' : '!px-7 !py-3 !text-[11px]'
+              }`}
             >
-              Solicitar Meu Site
-            </a>
+              Solicitar meu site
+            </Botao>
 
             {/* Mobile Menu Button - Only visible when NOT scrolled */}
             {!scrolled && (
@@ -98,14 +99,14 @@ const Navbar: React.FC = () => {
             <button onClick={() => scrollTo('portfolio')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">Portfólio</button>
             <button onClick={() => scrollTo('about')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">Sobre</button>
             <button onClick={() => scrollTo('faq')} className="block w-full py-4 text-center text-xs font-black text-slate-700 hover:text-brand-600 border-b border-slate-50 uppercase tracking-widest">FAQ</button>
-            <a 
+            <Botao
               href="https://wa.me/5543991621344?text=Quero%20solicitar%20meu%20site"
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="mt-6 block w-full text-center bg-brand-600 text-white font-black py-4 rounded-2xl shadow-xl shadow-brand-600/30 uppercase tracking-widest text-[10px]"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 w-full justify-center"
             >
               Falar no WhatsApp
-            </a>
+            </Botao>
           </div>
         </div>
       )}

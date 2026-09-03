@@ -1,3 +1,4 @@
+import { Marca } from './ui/Marca';
 import React from 'react';
 import { Instagram, Linkedin, Code } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -29,9 +30,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           
           <div className="col-span-1 md:col-span-2">
-            <span className="text-3xl font-extrabold text-slate-900 tracking-tighter block mb-6">
-              LSPK <span className="text-brand-600">TECNOLOGY</span>
-            </span>
+            <Marca className="h-12 mb-6 block" />
             <p className="text-slate-500 text-base font-medium max-w-md leading-relaxed">
               Transformamos ideias em experiências digitais de alto impacto. 
               Somos especialistas em criar sites que unem estética premium e performance de vendas para o seu negócio.

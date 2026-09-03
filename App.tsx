@@ -24,17 +24,29 @@ const App: React.FC = () => {
 
         <Footer />
 
-        {/* Sticky Whatsapp Button */}
-        <a 
+        {/* Atalho fixo do WhatsApp.
+            Era um circulo verde com o icone dentro — o widget mais
+            copiado da internet, e o unico ponto da tela em cor de outra
+            marca. Agora e' uma barra chanfrada como os outros botoes,
+            na cor da LSPK, que se abre ao passar o cursor.
+            O simbolo do WhatsApp fica: ali ele nao e' decoracao, e' o
+            que diz QUAL aplicativo vai abrir. */}
+        <a
           href="https://wa.me/5543991621344?text=Quero%20solicitar%20meu%20site"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-8 right-8 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 flex items-center justify-center group"
           aria-label="Falar no WhatsApp"
+          className="group/botao fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-brand-600 py-4 pl-5 pr-5 text-white shadow-2xl shadow-brand-600/30 transition-[padding,box-shadow] duration-300 hover:pr-7 hover:shadow-brand-600/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          style={{
+            clipPath:
+              'polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)',
+          }}
         >
-          <WhatsappLogo className="w-8 h-8 fill-current" />
-          <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 font-bold whitespace-nowrap text-sm">
-            Solicitar Site
+          <WhatsappLogo className="w-6 h-6 fill-current shrink-0" />
+          {/* O texto nasce com largura zero e cresce no hover: no
+              celular ocupa so o quadrado, no computador convida. */}
+          <span className="max-w-0 overflow-hidden whitespace-nowrap text-xs font-bold uppercase tracking-[0.14em] transition-[max-width] duration-500 ease-out group-hover/botao:max-w-[12rem]">
+            Solicitar site
           </span>
         </a>
       </div>

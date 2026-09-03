@@ -94,3 +94,50 @@ body {
   background-color: var(--brand-color);
   color: white;
 }
+/* ─── Entrada da primeira tela ──────────────────────────────────────
+   A capa monta em etapas: rotulo, titulo, texto, botoes, provas. Cada
+   um entra ~100ms depois do anterior (o atraso vai no style de cada
+   elemento).
+
+   Encadeado, e nao tudo de uma vez, porque a ordem do movimento e' a
+   ordem da leitura — o olho e' levado de cima para baixo em vez de
+   receber a tela pronta e ter de procurar onde comecar.
+
+   `backwards` no fill: sem ele o elemento pisca visivel no primeiro
+   quadro, antes de o atraso comecar a contar. */
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.entrada {
+  animation: entrar 800ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* ─── Respiro do fundo ──────────────────────────────────────────────
+   Um brilho azul muito discreto que cresce e encolhe atras da capa.
+   Da vida ao preto sem competir com o conteudo: 18 segundos de ciclo
+   e opacidade baixa, para ser percebido de canto de olho e nunca
+   chamar atencao. */
+@keyframes respirar {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%      { opacity: 0.6;  transform: scale(1.12); }
+}
+
+.respiro {
+  animation: respirar 18s ease-in-out infinite;
+}
+
+/* Movimento e' acessibilidade, nao enfeite: quem pediu menos animacao
+   no sistema recebe tudo parado e visivel. O mesmo vale para o
+   `useRevelar`, que checa isto no JavaScript. */
+@media (prefers-reduced-motion: reduce) {
+  .entrada,
+  .respiro,
+  .animate-float,
+  .animate-pulse-slow,
+  .text-blue-gradient {
+    animation: none !important;
+  }
+  .entrada { opacity: 1; transform: none; }
+}
